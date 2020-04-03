@@ -1,0 +1,60 @@
+---
+  extends:
+    - airbnb-base
+    - plugin:react/recommended
+  plugins:
+    - react
+  parser: babel-eslint
+  env:
+    browser: true
+    jest: true
+  parserOptions:
+    sourceType: module
+    allowImportExportEverywhere: false
+  rules:
+    jsx-a11y/label-has-for: off
+    jsx-a11y/label-has-associated-control: off
+    react/prop-types:
+      - error
+      - ignore:
+          - children
+        skipUndeclared: false
+    indent:
+      - error
+      - 2
+      - SwitchCase: 1
+    react/prefer-stateless-function:
+      - warn
+      - ignorePureComponents: true
+    react/jsx-one-expression-per-line: off
+    react/forbid-prop-types: off
+    react/jsx-filename-extension: off
+    no-mutable-exports: false
+    no-confusing-arrow: off
+    import/no-mutable-exports: error
+    no-underscore-dangle: 0
+    class-methods-use-this:
+      - off
+    no-use-before-define:
+      - error
+      - functions: false
+        classes: false
+    arrow-parens:
+      - error
+      - as-needed
+      - requireForBlockBody: false
+    import/prefer-default-export: off
+    comma-dangle: off
+    padded-blocks: off
+    computed-property-spacing: off
+    array-bracket-spacing: off
+    consistent-return: off
+    max-len:
+      - error
+      - code: 120
+    no-param-reassign:
+      - error
+      - props: true
+        ignorePropertyModificationsFor:
+          - draft
+  
