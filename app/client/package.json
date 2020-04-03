@@ -4,11 +4,14 @@
   "description": "Simple profile to show yourself",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack --mode development",
+    "start:watch": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "axios": "^0.19.2",
+    "bootstrap": "^4.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",

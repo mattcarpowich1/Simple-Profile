@@ -6,10 +6,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const BUILD_DIR = 'build';
-const PROJECT_ROOT = '/app/client';
-const PUBLIC_PATH = `${PROJECT_ROOT}/${BUILD_DIR}/`;
-const BUILD_PATH = path.resolve(__dirname, BUILD_DIR);
+const BUILD_DIR = path.resolve(__dirname, 'build');
+const PUBLIC_PATH = `./app/client/${BUILD_DIR}/`;
 const APP_DIR = path.resolve(__dirname, 'src');
 
 const MiniCssLoader = {
@@ -54,12 +52,10 @@ const postCSSLoader = {
 
 const baseConfig = {
 
-  entry: path.join(APP_DIR, 'app.js'),
+  entry: path.join(APP_DIR, 'index.js'),
   output: {
-    path: BUILD_PATH,
-    filename: 'js/main.js',
-    // This is needed for lazy loaded components
-    publicPath: PUBLIC_PATH,
+    path: BUILD_DIR,
+    filename: 'js/bundle.js',
   },
 
   module: {
@@ -197,8 +193,8 @@ module.exports = (_, argv) => {
       },
 
       externals: {
-        react: 'React',
-        'react-dom': 'ReactDOM',
+        React: 'React',
+        ReactDOM: 'ReactDOM',
       },
 
       plugins: [
