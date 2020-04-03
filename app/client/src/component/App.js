@@ -6,21 +6,13 @@ const App = () => (
   <div className={style.container}>
 
     <nav>
-      <div className={style.spacerSmall}>
-        <h4>Profile</h4>
+      <div className={style.navInner}>
+        <img src="./images/eye.svg" atl="Eye Logo" />
+        <h4>iPeek</h4>
       </div>
     </nav>
 
-    <div className={style.coverPhoto}>
-      {
-        sampleProfileData.coverPhotoUrl && (
-          <img
-            src={sampleProfileData.coverPhotoUrl}
-            alt="Cover Photo"
-          />
-        )
-      }
-    </div>
+    <div className={style.coverPhoto} />
 
     <div className={style.profileOverview}>
       <div className={style.profileImageSection}>
@@ -54,6 +46,14 @@ const App = () => (
         sampleProfileData.city && (
           <p>
             {sampleProfileData.city}{sampleProfileData.state && `, ${sampleProfileData.state}`}
+          </p>
+        )
+      }
+
+      {
+        sampleProfileData.aboutMe && (
+          <p>
+            <br /><br />{sampleProfileData.aboutMe}
           </p>
         )
       }
