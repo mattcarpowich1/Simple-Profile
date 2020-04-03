@@ -5,7 +5,8 @@ export const sampleProfileData = {
   city: 'San Diego',
   state: 'CA',
   country: 'US',
-  profilePhotoURL: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',
+  profilePhotoUrl: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',
+  coverPhotoUrl: 'https://cdn.pixabay.com/photo/2020/03/19/08/33/pink-4946728_1280.jpg',
   photos: [
     {
       url: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',

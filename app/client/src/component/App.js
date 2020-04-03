@@ -11,12 +11,29 @@ const App = () => (
       </div>
     </nav>
 
+    <div className={style.coverPhoto}>
+      {
+        sampleProfileData.coverPhotoUrl && (
+          <img
+            src={sampleProfileData.coverPhotoUrl}
+            alt="Cover Photo"
+          />
+        )
+      }
+    </div>
+
     <div className={style.profileOverview}>
-      <div className={style.profileImageOuter}>
-        <img
-          src={sampleProfileData.profilePhotoURL}
-          alt="Profile Picture"
-        />
+      <div className={style.profileImageSection}>
+        <div className={style.profileImageOuter}>
+          {
+            sampleProfileData.profilePhotoUrl && (
+              <img
+                src={sampleProfileData.profilePhotoUrl}
+                alt="Profile Picture"
+              />
+            )
+          }
+        </div>
       </div>
 
       <h1>
@@ -24,6 +41,22 @@ const App = () => (
         &nbsp;
         {sampleProfileData.lastName}
       </h1>
+
+      {
+        sampleProfileData.occupation && (
+          <p>
+            {sampleProfileData.occupation}
+          </p>
+        )
+      }
+
+      {
+        sampleProfileData.city && (
+          <p>
+            {sampleProfileData.city}{sampleProfileData.state && `, ${sampleProfileData.state}`}
+          </p>
+        )
+      }
 
     </div>
   </div>

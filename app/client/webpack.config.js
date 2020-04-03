@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'build');
+const BUILD_DIR = path.resolve(__dirname, 'public', 'build');
 const PUBLIC_PATH = `./app/client/${BUILD_DIR}/`;
 const APP_DIR = path.resolve(__dirname, 'src');
 
