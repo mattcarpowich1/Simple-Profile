@@ -9,12 +9,16 @@ export const sampleProfileData = {
   coverPhotoUrl: 'https://cdn.pixabay.com/photo/2020/03/19/08/33/pink-4946728_1280.jpg',
   photos: [
     {
-      url: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',
+      src: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',
       caption: 'Me, in black and white.'
     },
     {
-      url: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',
+      src: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',
       caption: 'Me again, in San Diego (in black and white)'
+    },
+    {
+      src: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',
+      caption: 'Wow! So much ME.'
     }
   ],
   aboutMe: 'I am just a regular guy. I love dogs, flowers, and music.',
