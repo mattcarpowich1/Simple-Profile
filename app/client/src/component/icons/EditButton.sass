@@ -1,0 +1,44 @@
+$small-screen: '(min-width: 480px)'
+$large-screen: '(min-width: 969px)'
+
+* 
+  box-sizing: border-box
+  
+.editButton
+  height: 22px
+  width: 22px
+  top: 90px
+  position: absolute
+  left: 139px
+  display: flex 
+  justify-content: center 
+  align-items: center 
+  background: none 
+  border: none 
+  padding: 0
+  z-index: 2
+  outline: none 
+
+  *
+    transition: fill .3s ease 
+
+.editButton:hover
+  cursor: pointer 
+
+.editButton > svg 
+  height: 100%
+  width: auto
+
+@media #{$small-screen}
+  .editButton
+    height: 24px
+    width: 24px
+    top: 19.5vw
+    left: calc(60px + 15.5vw)
+
+@media #{$large-screen}
+
+  .editButton
+    top: 189px
+    left: 211px
+

@@ -1,4 +1,5 @@
-export const sampleProfileData = {
+export const sampleProfile = {
+  id: 1,
   firstName: 'Matt',
   lastName: 'Carpowich',
   hideLastName: false,
@@ -14,7 +15,7 @@ export const sampleProfileData = {
     },
     {
       src: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',
-      caption: 'Me again, in San Diego (in black and white)'
+      caption: 'Me again, in San Diego.'
     },
     {
       src: 'https://photos-of-matt-carpowich.s3-us-west-1.amazonaws.com/mattblackandwhite1.jpg',
@@ -39,4 +40,13 @@ export const sampleProfileData = {
       endYear: '2011'
     }
   ]
+};
+
+export const sampleUser = {
+  id: 1
+};
+
+export const sampleTheme = {
+  color: '#aaaaaa',
+  hoverColor: '#603a9a'
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { sampleProfileData } from '../data/sampleProfileData';
+import { sampleProfile } from '../data/sampleData';
 import style from './App.sass';
 
 const App = () => (
@@ -8,8 +8,7 @@ const App = () => (
     {/* nav component */}
     <nav>
       <div className={style.navInner}>
-        <img src="./images/eye.svg" atl="Eye Logo" />
-        <h4>iPeek</h4>
+        <h4>Profile</h4>
       </div>
     </nav>
 
@@ -22,14 +21,13 @@ const App = () => (
     {/* profile overview component */}
     <div className={style.profileOverview}>
 
-
       {/* profile image component */}
       <div className={style.profileImageSection}>
         <div className={style.profileImageOuter}>
           {
-            sampleProfileData.profilePhotoUrl && (
+            sampleProfile.profilePhotoUrl && (
               <img
-                src={sampleProfileData.profilePhotoUrl}
+                src={sampleProfile.profilePhotoUrl}
                 alt="Profile Picture"
               />
             )
@@ -39,35 +37,58 @@ const App = () => (
 
       {/* name component */}
       <h1>
-        {sampleProfileData.firstName}
+        {sampleProfile.firstName}
         &nbsp;
-        {sampleProfileData.lastName}
+        {sampleProfile.lastName}
       </h1>
 
       {/* info component */}
       {
-        sampleProfileData.occupation && (
+        sampleProfile.occupation && (
           <p>
-            {sampleProfileData.occupation}
+            {sampleProfile.occupation}
           </p>
         )
       }
 
       {/* info component */}
       {
-        sampleProfileData.city && (
+        sampleProfile.city && (
           <p>
-            {sampleProfileData.city}{sampleProfileData.state && `, ${sampleProfileData.state}`}
+            {sampleProfile.city}{sampleProfile.state && `, ${sampleProfile.state}`}
           </p>
         )
       }
 
       {/* info component */}
       {
-        sampleProfileData.aboutMe && (
+        sampleProfile.aboutMe && (
           <p>
-            <br /><br />{sampleProfileData.aboutMe}
+            <br /><br />{sampleProfile.aboutMe}
           </p>
+        )
+      }
+
+      {/* education component */}
+      {
+        sampleProfile.education && sampleProfile.education.length > 0 && (
+          <>
+          <h6 className={style.education}>
+            EDUCATION
+          </h6>
+          {
+            sampleProfile.education.map(e => (
+              <>
+                <p className={style.educationName}>
+                  {e.name}
+                </p>
+                <p className={style.educationTime}>
+                  {e.startMonth}, {e.startYear} - {e.endMonth}, {e.endYear}
+                </p>
+              </>
+            ))
+          }
+          </>
         )
       }
 
@@ -77,7 +98,7 @@ const App = () => (
     <div className={style.photos}>
       <div className={style.photosInner}>
         {
-          sampleProfileData.photos.map((item, index) => (
+          sampleProfile.photos.map((item, index) => (
             // photo component
             <div className={style.photoOuter} key={`${index}_${item.src}`}>
               <img src={item.src} alt="Photo" />

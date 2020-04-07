@@ -5,6 +5,7 @@ $p4: #1D2BB6
 $p5: #182285
 
 $theme-color: #603a9a
+$line-color: #aaa
 
 $white: #FAFAFA 
 $black: #212121
@@ -37,13 +38,20 @@ nav
   flex-direction: row 
   justify-content: center 
   background-color: $white 
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.17)
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.17)
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.17)
+  position: fixed 
+  top: 0
+  left: 0
+  z-index: 100 
 
 
 .navInner
   margin: 0px 
   width: 100%
   max-width: $max-width
-  padding: 0px 20px
+  padding: 8px 20px
   display: flex 
   flex-direction: row 
   justify-content: flex-start 
@@ -58,12 +66,13 @@ nav
   h4 
     font-size: 24px 
     font-family: $font1 
-    color: $black  
+    color: $theme-color 
     margin: 0
 
 div.coverPhoto
   width: 100vw
   height: 160px
+  margin-top: 36px 
   display: flex 
   justify-content: center 
   align-items: center 
@@ -86,12 +95,14 @@ div.coverPhoto
   max-width: $max-width
   min-width: $min-width
   padding: 0px 20px 
+  position: relative 
 
 div.profileImageSection
   display: flex 
   flex-direction: row 
   justify-content: flex-start 
   align-items: flex-start 
+  pointer-events: none 
 
 div.profileImageOuter
   width: 120px
@@ -115,7 +126,7 @@ h1
   font-size: 24px 
   font-family: $font1 
   color: $theme-color
-  font-weight: 600 
+  font-weight: 700 
 
 p 
   margin-top: 1px 
@@ -123,6 +134,25 @@ p
   font-size: 16px 
   font-family: $font1 
   color: $theme-color
+
+h6.education
+  color: $theme-color
+  font-family: $font1
+  font-size: 20px 
+  font-weight: 600 
+  width: 100%
+  border-top: 1px solid $line-color
+  padding-top: 32px 
+  margin-top: 32px 
+
+p.educationName 
+  margin-top: 24px 
+  font-size: 16px 
+  font-weight: 500
+
+p.educationTime
+  font-size: 14px 
+  font-weight: 300
 
 div.photos 
   padding: 0px 20px
@@ -139,7 +169,7 @@ div.photosInner
   position: relative 
   padding: 64px 0px 
   width: 100%
-  border-top: 1px solid $theme-color
+  border-top: 1px solid $line-color
   display: flex 
   flex-direction: column 
   justify-content: flex-start 
@@ -183,25 +213,24 @@ div.photoOuter
     width: calc(20vw + 24px)
     height: calc(20vw + 24px)
 
-  div.photosInner 
-    padding: 64px 24px
-
 @media #{$med-screen}
   div.photosInner
     flex-direction: row 
     justify-content: flex-start 
     flex-wrap: wrap 
-    padding: 16px 24px 
+    padding: 16px 0px 
 
   div.photoOuter
-    margin: 0px 24px 
+    margin: 24px 24px 
     min-width: 188px 
     max-width: 480px 
-    width: calc(50% - 48px)
-    margin-top: 48px 
+    width: calc(50% - 24px)
 
-  div.photoOuter:nth-child(1)
-    flex-grow: 1 
+  div.photoOuter:nth-child(2n - 1)
+    margin-left: 0
+
+  div.photoOuter:nth-child(2n)
+    margin-right: 0
 
 @media #{$large-screen}
   div.coverPhoto
@@ -213,4 +242,18 @@ div.photoOuter
   div.profileImageOuter 
     height: 218px
     width: 218px 
+
+  div.photoOuter
+    width: calc(33.33333% - 31px)
+
+  div.photoOuter:nth-child(2n),
+  div.photoOuter:nth-child(2n + 1)
+    margin: 24px 23px 
+
+  div.photoOuter:nth-child(3n + 1)
+    margin-left: 0
+
+  div.photoOuter:nth-child(3n)
+    margin-right: 0
+
 
