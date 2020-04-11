@@ -1,0 +1,25 @@
+$small-screen: '(min-width: 480px)'
+$med-screen: '(min-width: 640px)'
+$large-screen: '(min-width: 969px)'
+  
+div.coverPhoto
+  width: 100vw
+  height: 160px
+  margin-top: 36px 
+  display: flex 
+  justify-content: center 
+  align-items: center 
+  overflow: hidden 
+
+  img 
+    min-width: 100%
+    height: auto 
+    width: auto 
+
+@media #{$small-screen}
+  div.coverPhoto
+    height: calc(15vw + 87px)
+
+@media #{$large-screen}
+  div.coverPhoto
+    height: 240px 

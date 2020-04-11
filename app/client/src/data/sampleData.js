@@ -1,6 +1,6 @@
 export const sampleProfile = {
   id: 1,
-  firstName: 'Matt',
+  firstName: 'Matthew',
   lastName: 'Carpowich',
   hideLastName: false,
   city: 'San Diego',
