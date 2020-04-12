@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { themeReducer as theme } from './theme';
+import { userReducer as user } from './user';
 
 export const reducers = combineReducers({
-  theme
+  user
 });

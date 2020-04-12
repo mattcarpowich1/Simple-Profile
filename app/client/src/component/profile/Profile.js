@@ -1,14 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import CoverPhoto from './components/coverPhoto';
-import { sampleProfile } from '../../data/sampleData';
 import style from './Profile.sass';
 
 const Profile = () => {
-  const theme = useSelector(state => state.theme);
+  const user = useSelector(state => state.user);
   return (
     <>
-      <CoverPhoto color1={theme.color1} color2={theme.color2} />
+      <CoverPhoto color1={user.theme.color1} color2={user.theme.color2} />
 
       {/* profile overview component */}
       <div className={style.profileOverview}>
@@ -17,9 +16,9 @@ const Profile = () => {
         <div className={style.profileImageSection}>
           <div className={style.profileImageOuter}>
             {
-              sampleProfile.profilePhotoUrl && (
+              user.profilePhotoUrl && (
                 <img
-                  src={sampleProfile.profilePhotoUrl}
+                  src={user.profilePhotoUrl}
                   alt="Profile Picture"
                 />
               )
@@ -29,47 +28,47 @@ const Profile = () => {
 
         {/* name component */}
         <h1>
-          {sampleProfile.firstName}
+          {user.firstName}
           &nbsp;
-          {sampleProfile.lastName}
+          {user.lastName}
         </h1>
 
         {/* info component */}
         {
-          sampleProfile.occupation && (
+          user.occupation && (
             <p>
-              {sampleProfile.occupation}
+              {user.occupation}
             </p>
           )
         }
 
         {/* info component */}
         {
-          sampleProfile.city && (
+          user.city && (
             <p>
-              {sampleProfile.city}{sampleProfile.state && `, ${sampleProfile.state}`}
+              {user.city}{user.state && `, ${user.state}`}
             </p>
           )
         }
 
         {/* info component */}
         {
-          sampleProfile.aboutMe && (
+          user.aboutMe && (
             <p>
-              <br /><br />{sampleProfile.aboutMe}
+              <br /><br />{user.aboutMe}
             </p>
           )
         }
 
         {/* education component */}
         {
-          sampleProfile.education && sampleProfile.education.length > 0 && (
+          user.education && user.education.length > 0 && (
             <>
             <h6 className={style.education}>
               EDUCATION
             </h6>
             {
-              sampleProfile.education.map(e => (
+              user.education.map(e => (
                 <React.Fragment key={e.name}>
                   <p className={style.educationName}>
                     {e.name}
@@ -90,7 +89,7 @@ const Profile = () => {
       <div className={style.photos}>
         <div className={style.photosInner}>
           {
-            sampleProfile.photos.map((item, index) => (
+            user.photos.map((item, index) => (
               // photo component
               <div className={style.photoOuter} key={`${index}_${item.src}`}>
                 <img src={item.src} alt="Photo" />
