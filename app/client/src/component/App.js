@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route, withRouter } from 'react-router';
 import compose from 'lodash/fp/compose';
 import withRoot from '../withRoot';
+import Signup from './signup';
 import Profile from './profile';
 import style from './App.sass';
 
@@ -16,7 +17,8 @@ const App = () => (
     </nav>
 
     <Switch>
-      <Route exact path="/" component={Profile} />
+      <Route exact path="/" component={Signup} />
+      <Route path="/profile" component={Profile} />
     </Switch>
 
   </div>
